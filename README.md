@@ -81,7 +81,3 @@ Authorization: Bearer <token>
 ## 📫 Postman Collection
 
 Import the included Postman collection to test endpoints. Set the `base_url` variable to your running backend (e.g., http://localhost:5000).
-
-## 📄 License
-
-This project is for demonstration purposes under a 24-hour hackathon challenge.
