@@ -15,7 +15,7 @@ export const matchCandidatesToJob = async (req, res) => {
           job.description,
           candidate.resumeText || ""
         );
-        return { candidate, score };
+          return { ...candidate.toObject(), ...score };
       })
       .filter((m) => m.score > 0)
       .sort((a, b) => b.score - a.score);
@@ -41,7 +41,7 @@ export const matchJobsToCandidate = async (req, res) => {
           candidate.resumeText || "",
           job.description
         );
-        return { job, score };
+        return { ...job.toObject(), ...score };
       })
       .filter((m) => m.score > 0)
       .sort((a, b) => b.score - a.score);

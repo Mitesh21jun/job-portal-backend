@@ -19,6 +19,7 @@ connectDB();
 app.use("/api/auth", authRoutes);
 app.use("/api/candidate", candidateRoutes);
 app.use("/api/employer", employerRoutes);
+app.use("/api/job", employerRoutes);
 app.use("/api/match", matchRoutes);
 app.get("/", (req, res) => {
   res.send("Welcome to the Job Matching API");

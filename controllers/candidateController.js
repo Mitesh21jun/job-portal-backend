@@ -22,9 +22,9 @@ export const createOrUpdateProfile = async (req, res) => {
   }
 };
 
-export const getProfile = async (req, res) => {
+export const getProfileById = async (req, res) => {
   try {
-    const candidate = await Candidate.findById({ userId: req.params.id });
+    const candidate = await Candidate.findOne({ userId: req.params.id });
     if (!candidate) return res.status(404).json({ message: 'Profile not found' });
     res.json(candidate);
   } catch (err) {

@@ -2,11 +2,11 @@
 export const getKeywordMatchScore = (textA, textB) => {
   const aWords = new Set(textA.toLowerCase().split(/\W+/));
   const bWords = new Set(textB.toLowerCase().split(/\W+/));
-  let matches = 0;
+  let score = 0;
 
   for (let word of aWords) {
-    if (bWords.has(word)) matches++;
+    if (bWords.has(word)) score++;
   }
-
-  return matches;
+  const matched = Array.from(aWords).filter((word) => bWords.has(word));
+  return { score, matched };
 };
