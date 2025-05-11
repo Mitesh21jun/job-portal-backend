@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Job Matching API");
 });
 app.use((req, res, next) => {
-  res.status(404).json({ message: "Not Found" });
+  res.status(404).json({ message: "API Not Found" });
 });
 
 const PORT = process.env.PORT || 5000;
